@@ -13,6 +13,8 @@ mod prelude {
 
 use prelude::*;
 
+bracket_lib::prelude::add_wasm_support!();
+
 struct State {
     map: Map,
     player: Player,
@@ -37,6 +39,7 @@ impl GameState for State {
         self.player.render(ctx);
     }
 }
+
 fn main() -> BError {
     let context = BTermBuilder::simple80x50()
         .with_title("Dungeon Crawler")
